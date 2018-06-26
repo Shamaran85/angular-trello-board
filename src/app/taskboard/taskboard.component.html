@@ -1,0 +1,15 @@
+<div class="board">
+  <h1>Angular Trello Board</h1>
+  <button (click)="showForm = !showForm" style="margin: 20px 0">
+    New Task
+  </button>
+  <div *ngIf="showForm">
+    <task-form (taskAdded)="newSave($event)"></task-form>
+  </div>
+  <div class="lists">
+    <div *ngFor="let statusType of statusTypes">
+      <task-list [taskList]="filterTasks(statusType, taskList)" [statusType]="statusType">
+      </task-list>
+    </div>
+  </div>
+</div>

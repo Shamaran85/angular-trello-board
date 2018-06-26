@@ -1,0 +1,9 @@
+<form style="margin-bottom: 10px">
+    <input class="input" type="text" name="title" [(ngModel)]="task.title" #titleInput="ngModel" minlength="3" required placeholder="title" />
+    <div class="error" *ngIf="titleInput.invalid && (titleInput.dirty || titleInput.touched)">
+        <div *ngIf="titleInput.errors.required">Name is required.</div>
+        <div *ngIf="titleInput.errors.minlength">Name must be at least 3 characters long.</div>
+    </div>
+    <input class="input" type="text" placeholder="description" [(ngModel)]="task.description" name="description" />
+    <button type="submit" (click)="saveTask()"> Save </button>
+</form>

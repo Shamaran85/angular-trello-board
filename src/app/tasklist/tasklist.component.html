@@ -1,0 +1,6 @@
+<div class="header">
+  {{taskStatus}}
+</div>
+<div *ngFor="let task of taskList">
+  <task [task]="task"></task>
+</div>

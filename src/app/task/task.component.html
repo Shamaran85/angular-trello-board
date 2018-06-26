@@ -1,0 +1,16 @@
+<div class="task">
+  <div class="header">
+    <div>
+      {{ task.title }}
+    </div>
+    <select (change)="handleChange($event)">
+      <option *ngFor="let currentStatus of statusTypes" [selected]="currentStatus === task.status" value="{{ currentStatus }}">
+        {{ currentStatus }}
+      </option>
+    </select>
+  </div>
+  <hr>
+  <div class="body">
+    {{ task.description }}
+  </div>
+</div>
